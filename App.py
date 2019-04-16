@@ -26,7 +26,7 @@ class AppWindow(QWidget):
     # Określenie podstawowych parametrów okna
     def initInterface(self):
         self.setWindowTitle(self.title)
-        self.setGeometry(100, 100, 1000, 500)
+        self.setGeometry(100, 100, 900, 500)
         self.show()
 
     # Utworzenie i rozmieszczenie w siatce elementów interfejsu
@@ -166,16 +166,16 @@ class AppWindow(QWidget):
     def colorAB(self):
             colorAB= QColorDialog.getColor()
             if colorAB.isValid():
-                print(color1.name())
-                self.col1 = colorAB.name()
-                self.plot()
+                print(colorAB.name())
+                #self.col1 = colorAB.name()
+                self.draw(col1=colorAB.name())
 
     def colorCD(self):
             colorCD= QColorDialog.getColor()
             if colorCD.isValid():
-                print(color2.name())
-                self.col2 = colorCD.name()
-                self.plot()
+                print(colorCD.name())
+                #self.col2 = colorCD.name()
+                self.plot(col2=colorCD.name())
     
     # Funkcja usuwa zawartość pól do wprowadzania współrzędnych punktów A, B, C, D oraz wyniku P. Jest wywoływana przez
     # inne funkcje w razie potrzeby wyczyszczenia danych, w szczególności przez funkcję wyczyść.
